@@ -34,7 +34,7 @@ public class WxStateUtil {
 
     private static final SecureRandom RND = new SecureRandom();
     private static final Base64.Encoder B64 = Base64.getUrlEncoder().withoutPadding();
-    private static final long BEGIN = 1726000000L; // 秒级基准
+    private static final long BEGIN = 1_726_000_000L; // 秒级基准
 
     private WxStateUtil() {
     }
@@ -66,7 +66,7 @@ public class WxStateUtil {
         String r = B64.encodeToString(rand);
 
         /* 2. 相对秒 4 字节 -> 6 字符 */
-        int diff = (int) ((System.currentTimeMillis() / 1000L - BEGIN) & 0xFFFFFFFFL);
+        int diff = (int) ((System.currentTimeMillis() / 1000L - BEGIN) & 0xFF_FFF_FFFL);
         String t = B64.encodeToString(new byte[]{
                 (byte) (diff >>> 24), (byte) (diff >>> 16),
                 (byte) (diff >>> 8), (byte) diff});
