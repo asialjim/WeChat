@@ -16,9 +16,11 @@
 
 package com.asialjim.microapplet.wechat.applet.analysis.response;
 
+import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -29,7 +31,9 @@ import java.util.List;
  * @since 2025/11/01, &nbsp;&nbsp; <em>version:1.0</em>
  */
 @Data
-public class GetVisitPageRes implements Serializable {
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class GetVisitPageRes extends BaseWeChatApiRes {
     /**
      * 访问页面数据列表
      */

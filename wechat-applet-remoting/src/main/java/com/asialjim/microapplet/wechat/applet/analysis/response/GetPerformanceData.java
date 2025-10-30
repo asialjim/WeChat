@@ -39,4 +39,9 @@ public class GetPerformanceData implements Serializable {
      * 数据表列表
      */
     private List<Table> list;
+
+    /**
+     * 返回的数据数组
+     */
+    private List<Table> tables;
 }

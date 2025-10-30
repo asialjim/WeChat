@@ -14,32 +14,28 @@
  * limitations under the License.
  */
 
-package com.asialjim.microapplet.wechat.applet.analysis.response;
+package com.asialjim.microapplet.wechat.applet.analysis.request;
 
-import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
-import java.util.List;
+import java.io.Serializable;
 
 /**
- * 获取用户访问数据概况响应参数
+ * 时间范围参数
  *
- * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @author <a href="mailto:asialjim@qq.com">Asial Jim</a>
  * @version 1.0
- * @since 2025/11/01, &nbsp;&nbsp; <em>version:1.0</em>
+ * @since 2025/10/31, &nbsp;&nbsp; <em>version:1.0</em>
  */
 @Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class GetDailySummaryRes extends BaseWeChatApiRes {
+public class Time implements Serializable {
     /**
-     * 日期，格式为 yyyymmdd
+     * 开始日期时间戳
      */
-    private String ref_date;
+    private Long begin_timestamp;
+
     /**
-     * 数据概况列表
+     * 结束日期时间戳
      */
-    private List<DailySummaryData> list;
+    private Long end_timestamp;
 }

@@ -21,7 +21,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -34,7 +33,11 @@ import java.util.List;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class GetPerformanceDataRes extends BaseWeChatApiRes implements Serializable {
+public class GetPerformanceDataRes extends BaseWeChatApiRes  {
+    /**
+     * 返回的性能数据
+     */
+    private GetPerformanceData data;
     /**
      * 性能数据列表
      */

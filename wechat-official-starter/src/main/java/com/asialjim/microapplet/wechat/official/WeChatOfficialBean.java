@@ -19,6 +19,23 @@ package com.asialjim.microapplet.wechat.official;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 微信公众号相关组件的Spring配置类
+ * <p>
+ * 此类作为微信公众号功能模块的核心配置类，通过Spring的自动组件扫描机制，
+ * 自动发现并注册微信公众号相关的所有组件到Spring容器中。
+ * </p>
+ * <p>
+ * 使用场景：
+ * <ul>
+ *     <li>启动微信公众号功能模块</li>
+ *     <li>自动配置微信公众号相关组件</li>
+ *     <li>作为微服务中微信公众号能力的入口点</li>
+ * </ul>
+ * </p>
+ * @author Asial Jim
+ * @since 2.0.0
+ */
 @Configuration
 @ComponentScan
 public class WeChatOfficialBean {

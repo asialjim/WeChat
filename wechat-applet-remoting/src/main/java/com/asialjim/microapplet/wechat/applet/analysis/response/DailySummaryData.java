@@ -50,6 +50,16 @@ public class DailySummaryData implements Serializable {
     private Integer visit_uv;
 
     /**
+     * 转发次数
+     */
+    private Integer share_pv;
+
+    /**
+     * 转发人数
+     */
+    private Integer share_uv;
+
+    /**
      * 访问人数
      */
     private Integer stay_time_uv;

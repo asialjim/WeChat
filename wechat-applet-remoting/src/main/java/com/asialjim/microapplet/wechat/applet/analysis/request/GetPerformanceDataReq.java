@@ -20,6 +20,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 获取性能数据请求参数
@@ -31,6 +32,26 @@ import java.io.Serializable;
 @Data
 @Accessors(chain = true)
 public class GetPerformanceDataReq implements Serializable {
+    /**
+     * 查询数据的类型
+     * 10016：打开率
+     * 10017：启动各阶段耗时
+     * 10021：页面切换耗时
+     * 10022：内存指标
+     * 10023：内存异常
+     */
+    private Integer module;
+
+    /**
+     * 开始和结束日期的时间戳，时间跨度不能超过30天
+     */
+    private Time time;
+
+    /**
+     * 查询条件，比如机型，网络类型等等
+     */
+    private List<Param> params;
+    
     /**
      * 开始时间。格式为 yyyymmdd
      */
