@@ -65,7 +65,7 @@ public interface WeChatAppletAnalysisRemoting {
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappidweeklyretaininfo")
     GetWeeklyRetainRes getWeeklyRetain(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetWeeklyRetainReq req);
-    
+
     /**
      * 获取用户访问小程序月留存
      * <p>
@@ -81,7 +81,7 @@ public interface WeChatAppletAnalysisRemoting {
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappidmonthlyretaininfo")
     GetMonthlyRetainRes getMonthlyRetain(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetMonthlyRetainReq req);
-    
+
     /**
      * 获取用户访问小程序日留存
      * <p>
@@ -97,7 +97,7 @@ public interface WeChatAppletAnalysisRemoting {
      */
     @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappiddailyretaininfo")
     GetDailyRetainRes getDailyRetain(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetDailyRetainReq req);
-    
+
     /**
      * 获取用户访问小程序周留存请求参数
      */
@@ -108,13 +108,13 @@ public interface WeChatAppletAnalysisRemoting {
          * 开始日期，为周一日期。格式为 yyyymmdd
          */
         private String begin_date;
-        
+
         /**
          * 结束日期，为周日日期，限定查询一周数据。格式为 yyyymmdd
          */
         private String end_date;
     }
-    
+
     /**
      * 获取用户访问小程序月留存请求参数
      */
@@ -125,13 +125,13 @@ public interface WeChatAppletAnalysisRemoting {
          * 开始日期，为自然月第一天。格式为 yyyymmdd
          */
         private String begin_date;
-        
+
         /**
          * 结束日期，为自然月最后一天，限定查询一个月数据。格式为 yyyymmdd
          */
         private String end_date;
     }
-    
+
     /**
      * 获取用户访问小程序日留存请求参数
      */
@@ -142,13 +142,13 @@ public interface WeChatAppletAnalysisRemoting {
          * 开始日期。格式为 yyyymmdd
          */
         private String begin_date;
-        
+
         /**
          * 结束日期，限定查询1天数据，允许设置的最大值为昨日。格式为 yyyymmdd
          */
         private String end_date;
     }
-    
+
     /**
      * 获取用户访问小程序周留存响应结果
      */
@@ -160,34 +160,35 @@ public interface WeChatAppletAnalysisRemoting {
          * 时间，如："20170306-20170312"
          */
         private String ref_date;
-        
+
         /**
          * 新增用户留存
          */
         private List<RetainData> visit_uv_new;
-        
+
         /**
          * 活跃用户留存
          */
         private List<RetainData> visit_uv;
-        
-        /**
-         * 留存数据项
-         */
-        @Data
-        class RetainData implements Serializable {
-            /**
-             * 标识，0开始，表示当周，1表示1周后。依此类推，取值分别是：0,1,2,3,4
-             */
-            private Integer key;
-            
-            /**
-             * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-             */
-            private Integer value;
-        }
+
     }
-    
+
+    /**
+     * 留存数据项
+     */
+    @Data
+    class RetainData implements Serializable {
+        /**
+         * 标识，0开始，表示当周，1表示1周后。依此类推，取值分别是：0,1,2,3,4
+         */
+        private Integer key;
+
+        /**
+         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
+         */
+        private Integer value;
+    }
+
     /**
      * 获取用户访问小程序月留存响应结果
      */
@@ -199,34 +200,36 @@ public interface WeChatAppletAnalysisRemoting {
          * 时间，如："201702"
          */
         private String ref_date;
-        
+
         /**
          * 新增用户留存
          */
         private List<MonthlyRetainData> visit_uv_new;
-        
+
         /**
          * 活跃用户留存
          */
         private List<MonthlyRetainData> visit_uv;
-        
-        /**
-         * 月留存数据项
-         */
-        @Data
-        class MonthlyRetainData implements Serializable {
-            /**
-             * 标识，0开始，表示当月，1表示1月后。key取值分别是：0,1
-             */
-            private Integer key;
-            
-            /**
-             * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-             */
-            private Integer value;
-        }
+
+
     }
-    
+
+    /**
+     * 月留存数据项
+     */
+    @Data
+    class MonthlyRetainData implements Serializable {
+        /**
+         * 标识，0开始，表示当月，1表示1月后。key取值分别是：0,1
+         */
+        private Integer key;
+
+        /**
+         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
+         */
+        private Integer value;
+    }
+
     /**
      * 获取用户访问小程序日留存响应结果
      */
@@ -238,31 +241,33 @@ public interface WeChatAppletAnalysisRemoting {
          * 日期
          */
         private String ref_date;
-        
+
         /**
          * 新增用户留存
          */
         private List<DailyRetainData> visit_uv_new;
-        
+
         /**
          * 活跃用户留存
          */
         private List<DailyRetainData> visit_uv;
-        
+
+
+    }
+
+    /**
+     * 日留存数据项
+     */
+    @Data
+    class DailyRetainData implements Serializable {
         /**
-         * 日留存数据项
+         * 标识，0开始，表示当天，1表示1天后。依此类推，key取值分别是：0,1,2,3,4,5,6,7,14,30
          */
-        @Data
-        class DailyRetainData implements Serializable {
-            /**
-             * 标识，0开始，表示当天，1表示1天后。依此类推，key取值分别是：0,1,2,3,4,5,6,7,14,30
-             */
-            private Integer key;
-            
-            /**
-             * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-             */
-            private Integer value;
-        }
+        private Integer key;
+
+        /**
+         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
+         */
+        private Integer value;
     }
 }
