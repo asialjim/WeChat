@@ -52,7 +52,7 @@ public interface WeChatPaSubscribeMsgRemoting {
      * 公众号或网页使用一次性订阅消息流程如下：
      * 第一步：需要用户同意授权，获取一次给用户推送一条订阅模板消息的机会
      * 在确保微信公众账号拥有订阅消息授权的权限的前提下（已认证的公众号即有权限，可登录公众平台在接口权限列表处查看），引导用户在微信客户端打开如下链接：
-     * <a href="https://mp.weixin.qq.com/mp/subscribemsg?action=get_confirm&appid=wxaba38c7f163da69b&scene=1000&template_id=1uDxHNXwYQfBmXOfPJcjAS3FynHArD8aWMEFNRGSbCc&redirect_url=http%3a%2f%2fsupport.qq.com&reserved=test#wechat_redirect">官方文档</a>
+     * <a href="https://mp.weixin.qq.com/mp/subscribemsg?action=get_confirm&appid=****&scene=1000&template_id=1uDxHNXwYQfBmXOfPJcjAS3FynHArD8aWMEFNRGSbCc&redirect_url=http%3a%2f%2fsupport.qq.com&reserved=test#wechat_redirect">官方文档</a>
      * </pre>
      *
      * @param appid       {@link String 公众号的唯一标识}
