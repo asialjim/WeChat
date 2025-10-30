@@ -17,10 +17,10 @@
 package com.asialjim.microapplet.wechat.official.service.msg.reply;
 
 import com.asialjim.microapplet.common.event.BaseAsyncListener;
-import com.asialjim.microapplet.wechat.official.remoting.customer.WeChatPaCustomerMessageRemoting;
-import com.asialjim.microapplet.wechat.official.remoting.customer.meta.*;
-import com.asialjim.microapplet.wechat.official.remoting.customer.meta.item.*;
+import com.asialjim.microapplet.wechat.remoting.message.customer.WeChatCustomerMessageRemoting;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
+import com.asialjim.microapplet.wechat.remoting.message.customer.meta.*;
+import com.asialjim.microapplet.wechat.remoting.message.customer.meta.item.*;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -42,7 +42,7 @@ import java.util.Optional;
 @Component
 public class WeChatOutMsgListListener extends BaseAsyncListener<WeChatOutMsgListEvent> {
     @Resource
-    private WeChatPaCustomerMessageRemoting weChatPaCustomerMessageRemoting;
+    private WeChatCustomerMessageRemoting weChatCustomerMessageRemoting;
 
     @Override
     public void doOnEvent(WeChatOutMsgListEvent event) {
@@ -131,7 +131,7 @@ public class WeChatOutMsgListListener extends BaseAsyncListener<WeChatOutMsgList
                                 ));
                         msg.setNews(news);
 
-                        BaseWeChatApiRes res = this.weChatPaCustomerMessageRemoting.sendCustomerMsg(subjectId, msg);
+                        BaseWeChatApiRes res = this.weChatCustomerMessageRemoting.sendCustomerMsg(subjectId, msg);
                         log.info("\r\n\t被动回复消息:{}\r\n\t改为发送客服消息：{}\r\n\t结果：{}", wxMpXmlOutMessage, msg, res);
                     }
                 }
@@ -141,7 +141,7 @@ public class WeChatOutMsgListListener extends BaseAsyncListener<WeChatOutMsgList
             if (Objects.isNull(customerMsg))
                 return;
 
-            BaseWeChatApiRes res = this.weChatPaCustomerMessageRemoting.sendCustomerMsg(subjectId, customerMsg);
+            BaseWeChatApiRes res = this.weChatCustomerMessageRemoting.sendCustomerMsg(subjectId, customerMsg);
             log.info("\r\n\t被动回复文本消息:{}\r\n\t改为发送客服消息：{}\r\n\t结果：{}", wxMpXmlOutMessage, customerMsg, res);
         }
     }
