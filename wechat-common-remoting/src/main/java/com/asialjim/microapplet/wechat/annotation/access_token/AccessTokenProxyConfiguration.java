@@ -18,7 +18,6 @@ package com.asialjim.microapplet.wechat.annotation.access_token;
 
 
 import com.asialjim.microapplet.remote.net.context.RemoteNetNodeKey;
-import lombok.Setter;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -42,7 +41,7 @@ public class AccessTokenProxyConfiguration implements ApplicationContextAware {
     }
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    public void setApplicationContext(@SuppressWarnings("NullableProblems") ApplicationContext applicationContext) throws BeansException {
         AccessTokenProxyConfiguration.applicationContext = applicationContext;
     }
 }

@@ -15,11 +15,8 @@
  */
 package com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.service.impl;
 
-import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.mapper.WeChatOfficialMenuBaseMapper;
 import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.mapper.WeChatOfficialMenuRuleBaseMapper;
-import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.po.WeChatOfficialMenu;
 import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.po.WeChatOfficialMenuRule;
-import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.service.WeChatOfficialMenuMapperService;
 import com.asialjim.microapplet.wechat.official.infrastructure.repository.menu.service.WeChatOfficialMenuRuleMapperService;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
 import org.springframework.stereotype.Component;

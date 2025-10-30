@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-
+import java.io.Serial;
 
 
 /**
@@ -38,6 +38,7 @@ import lombok.ToString;
 public final class WeChatCustomerNewsMessage extends WeChatCustomerMessage<WeChatCustomerNewsMessage> {
 
     
+    @Serial
     private static final long serialVersionUID = -4445190535824531405L;
 	private News news;
 

@@ -3,7 +3,6 @@ package com.asialjim.microapplet.wechat.applet.url.meta;
 
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 /**
  * 获取NFC的小程序scheme码响应

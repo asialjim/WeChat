@@ -21,17 +21,10 @@ import com.asialjim.microapplet.remote.http.annotation.HttpMethod;
 import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
 import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.remote.net.response.JsonResult;
+import com.asialjim.microapplet.wechat.applet.analysis.request.*;
+import com.asialjim.microapplet.wechat.applet.analysis.response.*;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
-import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.util.List;
 
 /**
  * 微信小程序数据分析相关服务API客户端
@@ -147,314 +140,82 @@ public interface WeChatAppletAnalysisRemoting {
     GetDailyVisitTrendRes getDailyVisitTrend(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetDailyVisitTrendReq req);
 
     /**
-     * 获取用户访问小程序周留存请求参数
+     * 获取用户访问数据概况
+     * <p>
+     * 该接口用于获取用户访问数据概况
+     * 官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/data-analysis/overview/getDailySummary.html">...</a>
+     * <p>
+     * 注意事项：只能获取最近30天的数据，单次查询时间跨度不超过7天
+     *
+     * @param weChatIndex 微信索引
+     * @param req         获取数据概况请求参数
+     * @return {@link GetDailySummaryRes}
+     * @since 2025/11/01
      */
-    @Data
-    @Accessors(chain = true)
-    class GetWeeklyRetainReq implements Serializable {
-        /**
-         * 开始日期，为周一日期。格式为 yyyymmdd
-         */
-        private String begin_date;
-
-        /**
-         * 结束日期，为周日日期，限定查询一周数据。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
+    @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappiddailysummarytrend")
+    GetDailySummaryRes getDailySummary(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetDailySummaryReq req);
 
     /**
-     * 获取用户访问小程序月留存请求参数
+     * 获取访问页面数据
+     * <p>
+     * 该接口用于获取访问页面数据
+     * 官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/data-analysis/page-visit/getVisitPage.html">...</a>
+     * <p>
+     * 注意事项：时间范围最大7天
+     *
+     * @param weChatIndex 微信索引
+     * @param req         获取访问页面请求参数
+     * @return {@link GetVisitPageRes}
+     * @since 2025/11/01
      */
-    @Data
-    @Accessors(chain = true)
-    class GetMonthlyRetainReq implements Serializable {
-        /**
-         * 开始日期，为自然月第一天。格式为 yyyymmdd
-         */
-        private String begin_date;
-
-        /**
-         * 结束日期，为自然月最后一天，限定查询一个月数据。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
+    @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappidvisitpage")
+    GetVisitPageRes getVisitPage(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetVisitPageReq req);
 
     /**
-     * 获取用户访问小程序日留存请求参数
+     * 获取用户画像分布数据
+     * <p>
+     * 该接口用于获取用户画像分布数据
+     * 官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/data-analysis/user-portrait/getUserPortrait.html">...</a>
+     * <p>
+     * 注意事项：时间范围最大7天
+     *
+     * @param weChatIndex 微信索引
+     * @param req         获取用户画像请求参数
+     * @return {@link GetUserPortraitRes}
+     * @since 2025/11/01
      */
-    @Data
-    @Accessors(chain = true)
-    class GetDailyRetainReq implements Serializable {
-        /**
-         * 开始日期。格式为 yyyymmdd
-         */
-        private String begin_date;
-
-        /**
-         * 结束日期，限定查询1天数据，允许设置的最大值为昨日。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
-    
-    /**
-     * 获取用户访问小程序数据周趋势请求参数
-     */
-    @Data
-    @Accessors(chain = true)
-    class GetWeeklyVisitTrendReq implements Serializable {
-        /**
-         * 开始日期，为周一日期。格式为 yyyymmdd
-         */
-        private String begin_date;
-        
-        /**
-         * 结束日期，为周日日期，限定查询一周数据。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
-    
-    /**
-     * 获取用户访问小程序数据月趋势请求参数
-     */
-    @Data
-    @Accessors(chain = true)
-    class GetMonthlyVisitTrendReq implements Serializable {
-        /**
-         * 开始日期，为自然月第一天。格式为 yyyymmdd
-         */
-        private String begin_date;
-        
-        /**
-         * 结束日期，为自然月最后一天，限定查询一个月的数据。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
-    
-    /**
-     * 获取用户访问小程序数据日趋势请求参数
-     */
-    @Data
-    @Accessors(chain = true)
-    class GetDailyVisitTrendReq implements Serializable {
-        /**
-         * 开始日期。格式为 yyyymmdd
-         */
-        private String begin_date;
-        
-        /**
-         * 结束日期，限定查询1天数据，允许设置的最大值为昨日。格式为 yyyymmdd
-         */
-        private String end_date;
-    }
+    @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappiduserportrait")
+    GetUserPortraitRes getUserPortrait(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetUserPortraitReq req);
 
     /**
-     * 获取用户访问小程序周留存响应结果
+     * 获取性能数据
+     * <p>
+     * 该接口用于获取性能数据
+     * 官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/data-analysis/performance/getPerformanceData.html">...</a>
+     * <p>
+     * 注意事项：只能查询最近30天的数据，单次查询时间跨度不超过7天
+     *
+     * @param weChatIndex 微信索引
+     * @param req         获取性能数据请求参数
+     * @return {@link GetPerformanceDataRes}
+     * @since 2025/11/01
      */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetWeeklyRetainRes extends BaseWeChatApiRes {
-        /**
-         * 时间，如："20170306-20170312"
-         */
-        private String ref_date;
-
-        /**
-         * 新增用户留存
-         */
-        private List<RetainData> visit_uv_new;
-
-        /**
-         * 活跃用户留存
-         */
-        private List<RetainData> visit_uv;
-
-    }
+    @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappidperformance")
+    GetPerformanceDataRes getPerformanceData(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetPerformanceDataReq req);
 
     /**
-     * 留存数据项
+     * 获取访问分布数据
+     * <p>
+     * 该接口用于获取访问分布数据
+     * 官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/data-analysis/visit-distribution/getVisitDistribution.html">...</a>
+     * <p>
+     * 注意事项：时间范围最大7天
+     *
+     * @param weChatIndex 微信索引
+     * @param req         获取访问分布请求参数
+     * @return {@link GetVisitDistributionRes}
+     * @since 2025/11/01
      */
-    @Data
-    class RetainData implements Serializable {
-        /**
-         * 标识，0开始，表示当周，1表示1周后。依此类推，取值分别是：0,1,2,3,4
-         */
-        private Integer key;
-
-        /**
-         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-         */
-        private Integer value;
-    }
-
-    /**
-     * 获取用户访问小程序月留存响应结果
-     */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetMonthlyRetainRes extends BaseWeChatApiRes {
-        /**
-         * 时间，如："201702"
-         */
-        private String ref_date;
-
-        /**
-         * 新增用户留存
-         */
-        private List<MonthlyRetainData> visit_uv_new;
-
-        /**
-         * 活跃用户留存
-         */
-        private List<MonthlyRetainData> visit_uv;
-
-
-    }
-
-    /**
-     * 月留存数据项
-     */
-    @Data
-    class MonthlyRetainData implements Serializable {
-        /**
-         * 标识，0开始，表示当月，1表示1月后。key取值分别是：0,1
-         */
-        private Integer key;
-
-        /**
-         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-         */
-        private Integer value;
-    }
-
-    /**
-     * 获取用户访问小程序日留存响应结果
-     */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetDailyRetainRes extends BaseWeChatApiRes {
-        /**
-         * 日期
-         */
-        private String ref_date;
-
-        /**
-         * 新增用户留存
-         */
-        private List<DailyRetainData> visit_uv_new;
-
-        /**
-         * 活跃用户留存
-         */
-        private List<DailyRetainData> visit_uv;
-
-
-    }
-
-    /**
-     * 日留存数据项
-     */
-    @Data
-    class DailyRetainData implements Serializable {
-        /**
-         * 标识，0开始，表示当天，1表示1天后。依此类推，key取值分别是：0,1,2,3,4,5,6,7,14,30
-         */
-        private Integer key;
-
-        /**
-         * key对应日期的新增用户数/活跃用户数（key=0时）或留存用户数（k>0时）
-         */
-        private Integer value;
-    }
-    
-    /**
-     * 获取用户访问小程序数据周趋势响应结果
-     */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetWeeklyVisitTrendRes extends BaseWeChatApiRes {
-        /**
-         * 数据列表
-         */
-        private List<VisitTrendData> list;
-    }
-    
-    /**
-     * 获取用户访问小程序数据月趋势响应结果
-     */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetMonthlyVisitTrendRes extends BaseWeChatApiRes {
-        /**
-         * 数据列表
-         */
-        private List<VisitTrendData> list;
-    }
-    
-    /**
-     * 获取用户访问小程序数据日趋势响应结果
-     */
-    @Data
-    @ToString(callSuper = true)
-    @EqualsAndHashCode(callSuper = true)
-    class GetDailyVisitTrendRes extends BaseWeChatApiRes {
-        /**
-         * 数据列表
-         */
-        private List<VisitTrendData> list;
-    }
-    
-    /**
-     * 访问趋势数据项
-     */
-    @Data
-    class VisitTrendData implements Serializable {
-        /**
-         * 时间
-         * 日趋势：格式为 yyyymmdd
-         * 周趋势：格式为 yyyymmdd-yyyymmdd，如："20170306-20170312"
-         * 月趋势：格式为 yyyymm，如："201702"
-         */
-        private String ref_date;
-        
-        /**
-         * 打开次数（日趋势）/打开次数（自然周内汇总）/打开次数（自然月内汇总）
-         */
-        private Integer session_cnt;
-        
-        /**
-         * 访问次数（日趋势）/访问次数（自然周内汇总）/访问次数（自然月内汇总）
-         */
-        private Integer visit_pv;
-        
-        /**
-         * 访问人数（日趋势）/访问人数（自然周内去重）/访问人数（自然月内去重）
-         */
-        private Integer visit_uv;
-        
-        /**
-         * 新用户数（日趋势）/新用户数（自然周内去重）/新用户数（自然月内去重）
-         */
-        private Integer visit_uv_new;
-        
-        /**
-         * 人均停留时长 (浮点型，单位：秒)
-         */
-        private Double stay_time_uv;
-        
-        /**
-         * 次均停留时长 (浮点型，单位：秒)
-         */
-        private Double stay_time_session;
-        
-        /**
-         * 平均访问深度 (浮点型)
-         */
-        private Double visit_depth;
-    }
+    @HttpMapping(method = HttpMethod.POST, uri = "/datacube/getweanalysisappidvisitdistribution")
+    GetVisitDistributionRes getVisitDistribution(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetVisitDistributionReq req);
 }

@@ -18,12 +18,10 @@ package com.asialjim.microapplet.wechat.common.infrastructure.repository.user;
 
 import com.asialjim.microapplet.wechat.user.WeChatUserRepository;
 import com.asialjim.microapplet.wechat.user.WeChatUserVo;
-import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.mapper.WeChatUserBaseMapper;
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.po.WeChatUserPo;
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.user.service.WeChatUserMapperService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;

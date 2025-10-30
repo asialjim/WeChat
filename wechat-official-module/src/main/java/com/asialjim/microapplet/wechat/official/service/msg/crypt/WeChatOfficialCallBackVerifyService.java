@@ -19,7 +19,6 @@ import com.asialjim.microapplet.wechat.application.WeChatApplication;
 import com.asialjim.microapplet.wechat.application.WeChatApplicationRepository;
 import com.asialjim.microapplet.wechat.encryt.official.WeChatOfficialMsgCryptService;
 import jakarta.annotation.Resource;
-import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -27,7 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Objects;
 
 /**

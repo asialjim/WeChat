@@ -18,10 +18,8 @@ package com.asialjim.microapplet.wechat.common.infrastructure.repository.applica
 
 import com.asialjim.microapplet.wechat.application.WeChatApplication;
 import com.asialjim.microapplet.wechat.application.WeChatApplicationRepository;
-import com.asialjim.microapplet.wechat.common.infrastructure.repository.application.mapper.WeChatAppBaseMapper;
 import com.asialjim.microapplet.wechat.common.infrastructure.repository.application.service.WeChatApplicationMapperService;
 import jakarta.annotation.Resource;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

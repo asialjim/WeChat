@@ -21,7 +21,7 @@ import java.util.concurrent.locks.Lock;
  * 我们聊天访问令牌缓存
  *
  * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
- * @date 2025/09/23
+ * @since  2025/09/23
  */
 @SuppressWarnings("unused")
 public interface WeChatAccessTokenCache {

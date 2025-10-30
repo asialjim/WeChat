@@ -22,7 +22,6 @@ import com.asialjim.microapplet.remote.http.annotation.body.FormData;
 import com.asialjim.microapplet.remote.http.annotation.body.JsonBody;
 import com.asialjim.microapplet.remote.net.annotation.Server;
 import com.asialjim.microapplet.wechat.constant.WeChatCons;
-import com.asialjim.microapplet.wechat.remoting.customer.meta.*;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.asialjim.microapplet.wechat.remoting.context.WeChatAccessTokenParam;
 import com.asialjim.microapplet.wechat.remoting.message.customer.meta.*;

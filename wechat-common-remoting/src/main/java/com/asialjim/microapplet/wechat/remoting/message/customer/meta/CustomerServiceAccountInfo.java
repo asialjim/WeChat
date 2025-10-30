@@ -22,6 +22,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -36,7 +37,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerServiceAccountInfo implements Serializable {
-    
+
+    @Serial
     private static final long serialVersionUID = 6973601145433775787L;
 
     @JsonProperty("kf_account")

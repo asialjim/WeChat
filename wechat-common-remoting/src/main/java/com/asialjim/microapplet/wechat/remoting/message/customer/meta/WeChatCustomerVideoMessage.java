@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-
+import java.io.Serial;
 
 
 /**
@@ -38,6 +38,7 @@ import lombok.ToString;
 public final class WeChatCustomerVideoMessage extends WeChatCustomerMessage<WeChatCustomerVideoMessage> {
 
     
+    @Serial
     private static final long serialVersionUID = 9027731606293235320L;
 	private Media video;
 

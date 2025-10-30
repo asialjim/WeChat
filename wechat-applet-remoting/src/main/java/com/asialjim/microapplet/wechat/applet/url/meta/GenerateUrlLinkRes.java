@@ -2,7 +2,6 @@ package com.asialjim.microapplet.wechat.applet.url.meta;
 
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 /**
  * 获取小程序URL Link响应

@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,6 +37,7 @@ import java.util.List;
 public class CustomerServiceWaitCaseRes extends BaseWeChatApiRes {
 
     
+    @Serial
     private static final long serialVersionUID = 3577430939842974237L;
 
     private Integer count;

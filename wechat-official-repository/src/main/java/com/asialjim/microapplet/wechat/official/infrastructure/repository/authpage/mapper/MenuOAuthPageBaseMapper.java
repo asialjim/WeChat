@@ -17,7 +17,6 @@
 package com.asialjim.microapplet.wechat.official.infrastructure.repository.authpage.mapper;
 
 import com.asialjim.microapplet.wechat.official.infrastructure.repository.authpage.po.MenuOAuthPagePo;
-import com.asialjim.microapplet.wechat.official.infrastructure.repository.authpage.po.OAuthPagePo;
 import com.mybatisflex.core.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

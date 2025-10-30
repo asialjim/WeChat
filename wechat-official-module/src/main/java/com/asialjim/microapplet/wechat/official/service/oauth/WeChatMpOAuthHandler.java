@@ -20,7 +20,6 @@ import com.asialjim.microapplet.wechat.official.module.oauthpage.OAuthHandlerVo;
 import jakarta.validation.constraints.NotBlank;
 
 import java.net.URI;
-import java.util.List;
 
 /**
  * 公众号授权链接处理器

@@ -14,13 +14,28 @@
  * limitations under the License.
  */
 
-package com.asialjim.microapplet.wechat.context;
+package com.asialjim.microapplet.wechat.applet.analysis.response;
 
-@SuppressWarnings("unused")
-public interface APIResult<T> {
-    String getCode();
+import lombok.Data;
 
-    String getMsg();
+import java.io.Serializable;
 
-    T getData();
+/**
+ * 日留存数据项
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @version 1.0
+ * @since 2025/11/01, &nbsp;&nbsp; <em>version:1.0</em>
+ */
+@Data
+public class DailyRetainData implements Serializable {
+    /**
+     * 标识，0开始，表示第几天
+     */
+    private Integer key;
+
+    /**
+     * 新增用户数/活跃用户数（key=0时）
+     */
+    private Integer value;
 }

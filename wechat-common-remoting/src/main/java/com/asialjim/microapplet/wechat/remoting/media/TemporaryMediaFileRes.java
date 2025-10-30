@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 
 
 /**
@@ -36,6 +37,7 @@ import lombok.ToString;
 public class TemporaryMediaFileRes extends BaseWeChatDownloadApiRes {
 
     
+    @Serial
     private static final long serialVersionUID = 632374771981611113L;
     private String video_url;
 }

@@ -22,6 +22,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -36,6 +37,7 @@ public abstract class WeChatCustomerMessage<T extends WeChatCustomerMessage<?>>
         implements Serializable {
 
     
+    @Serial
     private static final long serialVersionUID = 6476058797183234088L;
 
     /**

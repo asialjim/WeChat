@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.util.List;
 
 /**
@@ -36,12 +37,14 @@ import java.util.List;
 public class GetMsgListRes extends BaseWeChatApiRes {
 
     
+    @Serial
     private static final long serialVersionUID = 175969025907335426L;
 
     private List<Record> recordlist;
     private Long number;
     private Long msgid;
 
+    @Data
     public static class Record{
         private String openid;
         private Integer opercode;

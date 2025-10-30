@@ -28,6 +28,7 @@ import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -221,6 +222,7 @@ public interface WeChatMediaRemoting {
     @EqualsAndHashCode(callSuper = true)
     class GetMaterialCountRes extends BaseWeChatApiRes {
         
+        @Serial
         private static final long serialVersionUID = 7550804730471254114L;
 
         private Long voice_count;
@@ -242,6 +244,7 @@ public interface WeChatMediaRemoting {
     @EqualsAndHashCode(callSuper = true)
     class GetPermanentMaterialRes extends BaseWeChatApiRes {
         
+        @Serial
         private static final long serialVersionUID = 9100971308259284755L;
 
         private String title;
@@ -255,7 +258,8 @@ public interface WeChatMediaRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class AddMaterialDescription implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = -4709329218582836162L;
         private String title;
         private String introduction;
@@ -265,7 +269,8 @@ public interface WeChatMediaRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class AddMaterialRes extends BaseWeChatApiRes {
-        
+
+        @Serial
         private static final long serialVersionUID = -5187374753924993502L;
         private String media_id;
         private String url;
@@ -275,7 +280,8 @@ public interface WeChatMediaRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class UploadNewsRes extends BaseWeChatApiRes {
-        
+
+        @Serial
         private static final long serialVersionUID = -5520951777093502946L;
 
         private String type;
@@ -285,7 +291,8 @@ public interface WeChatMediaRemoting {
 
     @Data
     class UploadNewsReq implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = -6118944236756795684L;
         private List<Article> articles;
 
@@ -322,7 +329,8 @@ public interface WeChatMediaRemoting {
     @NoArgsConstructor
     @AllArgsConstructor
     class BatchGetMaterialReq implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = 941027150088371833L;
 
         private String type;
@@ -334,7 +342,8 @@ public interface WeChatMediaRemoting {
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     class BatchGetMaterialRes extends BaseWeChatApiRes {
-        
+
+        @Serial
         private static final long serialVersionUID = -400632278705600288L;
 
         private Integer total_count;
@@ -344,7 +353,8 @@ public interface WeChatMediaRemoting {
 
     @Data
     class Item implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = 3568780140258963754L;
 
         private String media_id;
@@ -356,7 +366,8 @@ public interface WeChatMediaRemoting {
 
     @Data
     class ItemContent implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = -3800606453336514540L;
 
         private List<Article> news_item;
@@ -365,7 +376,8 @@ public interface WeChatMediaRemoting {
     @Data
     @SuppressWarnings("unused")
     class Article implements Serializable {
-        
+
+        @Serial
         private static final long serialVersionUID = 9204685982105664454L;
 
         /**

@@ -14,21 +14,29 @@
  * limitations under the License.
  */
 
-package com.asialjim.microapplet.wechat.context;
+package com.asialjim.microapplet.wechat.applet.analysis.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
+/**
+ * 性能数据表
+ *
+ * @author <a href="mailto:asialjim@hotmail.com">Asial Jim</a>
+ * @version 1.0
+ * @since 2025/11/01, &nbsp;&nbsp; <em>version:1.0</em>
+ */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class SimpleAPIResult<T> implements APIResult<T>, Serializable {
-    private String code;
-    private String msg;
-    private T data;
+public class Table implements Serializable {
+    /**
+     * 表名
+     */
+    private String name;
+
+    /**
+     * 数据行列表
+     */
+    private List<Line> lines;
 }
