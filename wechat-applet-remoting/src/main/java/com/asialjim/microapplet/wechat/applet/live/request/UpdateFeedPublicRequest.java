@@ -24,5 +24,5 @@ public class UpdateFeedPublicRequest implements Serializable {
     /**
      * 是否开启回放，0：关闭，1：开启
      */
-    private Integer feedPublic;
+    private Integer isFeedsPublic;
 }

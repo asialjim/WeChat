@@ -19,10 +19,10 @@ public class UpdateReplayRequest implements Serializable {
     /**
      * 回放视频ID
      */
-    private Integer replayId;
+    private Integer roomId;
     
     /**
      * 回放状态，0：未开始，1：转码中，2：转码完成，3：转码失败，4：已上架，10：已下架
      */
-    private Integer status;
+    private Integer closeReplay;
 }

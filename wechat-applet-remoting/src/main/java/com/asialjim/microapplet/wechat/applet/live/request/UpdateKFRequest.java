@@ -24,5 +24,5 @@ public class UpdateKFRequest implements Serializable {
     /**
      * 客服微信号
      */
-    private String kfWechat;
+    private String closeKf;
 }

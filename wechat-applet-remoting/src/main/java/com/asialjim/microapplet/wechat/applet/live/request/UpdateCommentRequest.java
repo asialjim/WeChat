@@ -24,5 +24,5 @@ public class UpdateCommentRequest implements Serializable {
     /**
      * 是否关闭评论，0：开启，1：关闭
      */
-    private Integer closeComment;
+    private Integer banComment;
 }

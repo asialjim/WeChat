@@ -33,8 +33,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: createRoom
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/create
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/create">...</a>
+     *
      * @param request 创建直播间请求参数
      * @return 创建直播间响应结果
      */
@@ -47,12 +47,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: getLiveInfo
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/getliveinfo
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxa/business/getliveinfo">...</a>
+     *
      * @param request 获取直播间信息请求参数
      * @return 获取直播间信息响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/getliveinfo")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxa/business/getliveinfo")
     GetLiveInfoResponse getLiveInfo(@WeChatAccessTokenParam String weChatIndex, @JsonBody GetLiveInfoRequest request);
     
     /**
@@ -61,8 +61,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: deleteRoom
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/deleteroom
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/deleteroom">...</a>
+     *
      * @param request 删除直播间请求参数
      * @return 删除直播间响应结果
      */
@@ -76,8 +76,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: editRoom
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/editroom
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/editroom">...</a>
+     *
      * @param request 编辑直播间请求参数
      * @return 编辑直播间响应结果
      */
@@ -90,8 +90,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: getPushUrl
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/getpushurl
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/getpushurl">...</a>
+     *
      * @param request 获取推流地址请求参数
      * @return 获取推流地址响应结果
      */
@@ -104,8 +104,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: getSharedCode
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/getsharedcode
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/getsharedcode">...</a>
+     *
      * @param request 获取分享二维码请求参数
      * @return 获取分享二维码响应结果
      */
@@ -118,8 +118,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: getSubAnchor
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/getsubanchor
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/getsubanchor">...</a>
+     *
      * @param request 获取主播副号列表请求参数
      * @return 获取主播副号列表响应结果
      */
@@ -132,8 +132,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: addSubAnchor
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/addsubanchor
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/addsubanchor">...</a>
+     *
      * @param request 添加主播副号请求参数
      * @return 添加主播副号响应结果
      */
@@ -146,8 +146,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: modifySubAnchor
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/modifysubanchor
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/modifysubanchor">...</a>
+     *
      * @param request 修改主播副号请求参数
      * @return 修改主播副号响应结果
      */
@@ -160,8 +160,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: deleteSubAnchor
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/deletesubanchor
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/deletesubanchor">...</a>
+     *
      * @param request 删除主播副号请求参数
      * @return 删除主播副号响应结果
      */
@@ -174,12 +174,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: importGoods
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/goods/import
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/addgoods">...</a>
+     *
      * @param request 导入商品请求参数
      * @return 导入商品响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/import")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/addgoods")
     BaseWeChatMessageRes importGoods(@WeChatAccessTokenParam String weChatIndex, @JsonBody ImportGoodsRequest request);
     
     /**
@@ -188,12 +188,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: deleteDoods
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/deletegoods
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/goods/deleteInRoom">...</a>
+     *
      * @param request 删除商品请求参数
      * @return 删除商品响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/deletegoods")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/deleteInRoom")
     BaseWeChatMessageRes deleteGoods(@WeChatAccessTokenParam String weChatIndex, @JsonBody DeleteDoodsRequest request);
     
     /**
@@ -202,12 +202,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: pushGoods
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/pushgoods
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/goods/push">...</a>
+     *
      * @param request 上架商品请求参数
      * @return 上架商品响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/pushgoods")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/push")
     BaseWeChatMessageRes pushGoods(@WeChatAccessTokenParam String weChatIndex, @JsonBody PushGoodsRequest request);
     
     /**
@@ -216,12 +216,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: SaleGoods
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/onsale
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/goods/onsale">...</a>
+     *
      * @param request 商品上下架请求参数
      * @return 商品上下架响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/onsale")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/onsale")
     BaseWeChatMessageRes saleGoods(@WeChatAccessTokenParam String weChatIndex, @JsonBody SaleGoodsRequest request);
     
     /**
@@ -230,12 +230,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: sortGoods
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/sortgoods
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/goods/sort">...</a>
+     *
      * @param request 商品排序请求参数
      * @return 商品排序响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/sortgoods")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/sort")
     BaseWeChatMessageRes sortGoods(@WeChatAccessTokenParam String weChatIndex, @JsonBody SortGoodsRequest request);
     
     /**
@@ -244,8 +244,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: addveAssistant
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/addassistant
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/addassistant">...</a>
+     *
      * @param request 添加直播助手请求参数
      * @return 添加直播助手响应结果
      */
@@ -258,8 +258,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: removeAssistant
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/removeassistant
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/removeassistant">...</a>
+     *
      * @param request 删除直播助手请求参数
      * @return 删除直播助手响应结果
      */
@@ -272,8 +272,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: modifyAssistant
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/modifyassistant
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/modifyassistant">...</a>
+     *
      * @param request 修改直播助手请求参数
      * @return 修改直播助手响应结果
      */
@@ -286,8 +286,8 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: getAssistantList
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/getassistantlist
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/getassistantlist">...</a>
+     *
      * @param request 获取直播助手列表请求参数
      * @return 获取直播助手列表响应结果
      */
@@ -300,12 +300,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: updateComment
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/closecomment
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/updatecomment">...</a>
+     *
      * @param request 开关直播间评论请求参数
      * @return 开关直播间评论响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/closecomment")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/updatecomment")
     BaseWeChatMessageRes updateComment(@WeChatAccessTokenParam String weChatIndex, @JsonBody UpdateCommentRequest request);
     
     /**
@@ -314,12 +314,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: updateFeedPublic
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/feedpublic
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/updatefeedpublic">...</a>
+     *
      * @param request 开关直播回放功能请求参数
      * @return 开关直播回放功能响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/feedpublic")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/updatefeedpublic")
     BaseWeChatMessageRes updateFeedPublic(@WeChatAccessTokenParam String weChatIndex, @JsonBody UpdateFeedPublicRequest request);
     
     /**
@@ -328,12 +328,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: updateKF
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/room/setkf
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/updatekf">...</a>
+     *
      * @param request 设置客服微信号请求参数
      * @return 设置客服微信号响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/setkf")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/updatekf")
     BaseWeChatMessageRes updateKF(@WeChatAccessTokenParam String weChatIndex, @JsonBody UpdateKFRequest request);
     
     /**
@@ -342,12 +342,12 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: updateReplay
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/replay/update
-     * 
+     * 请求地址: <a href="https://api.weixin.qq.com/wxaapi/broadcast/room/updatereplay">...</a>
+     *
      * @param request 修改回放状态请求参数
      * @return 修改回放状态响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/replay/update")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/room/updatereplay")
     BaseWeChatMessageRes updateReplay(@WeChatAccessTokenParam String weChatIndex, @JsonBody UpdateReplayRequest request);
     
     /**
@@ -356,11 +356,11 @@ public interface WeChatAppletLiveManageRemoting {
      * <p>
      * 接口英文名: downloadGoodsVideo
      * 调用方式: HTTPS调用
-     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/goods/getvideo
+     * 请求地址: https://api.weixin.qq.com/wxaapi/broadcast/goods/getVideo
      * 
      * @param request 下载商品视频请求参数
      * @return 下载商品视频响应结果
      */
-    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/getvideo")
+    @HttpMapping(method = HttpMethod.POST, uri = "/wxaapi/broadcast/goods/getVideo")
     DownloadGoodsVideoResponse downloadGoodsVideo(@WeChatAccessTokenParam String weChatIndex, @JsonBody DownloadGoodsVideoRequest request);
 }
