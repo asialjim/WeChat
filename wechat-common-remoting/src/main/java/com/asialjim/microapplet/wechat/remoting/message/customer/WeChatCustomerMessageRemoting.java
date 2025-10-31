@@ -134,7 +134,7 @@ public interface WeChatCustomerMessageRemoting {
      * @return {@link CustomerServiceOnLineAccountRes}
      * @since 2024/2/22
      */
-    @HttpMapping(method = HttpMethod.GET, uri = "cgi-bin/customservice/getonlinekflist")
+    @HttpMapping(method = HttpMethod.GET, uri = "/cgi-bin/customservice/getonlinekflist")
     CustomerServiceOnLineAccountRes getCustomerServiceOnLineAccountList(@WeChatAccessTokenParam String weChatIndexOrAccessToken);
 
     /**

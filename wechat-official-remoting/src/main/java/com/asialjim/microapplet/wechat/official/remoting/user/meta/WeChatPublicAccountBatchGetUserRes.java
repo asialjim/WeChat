@@ -15,7 +15,6 @@
  */
 package com.asialjim.microapplet.wechat.official.remoting.user.meta;
 
-import com.asialjim.microapplet.wechat.official.remoting.user.meta.WeChatPublicAccountUserInfo;
 import com.asialjim.microapplet.wechat.remoting.context.BaseWeChatApiRes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
